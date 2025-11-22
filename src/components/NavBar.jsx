@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { assets } from "../assets/assets";
 
-const NavBar = () => {
+const NavBar = ({ setShowLogin }) => {
   const navLinkStyles = ({ isActive }) =>
     `transition font-medium ${
       isActive
@@ -34,7 +34,6 @@ const NavBar = () => {
         </li>
       </ul>
 
-      {/* Right Icons */}
       <div className="flex items-center gap-6">
         <img
           src={assets.search_icon}
@@ -47,7 +46,7 @@ const NavBar = () => {
           className="cursor-pointer hover:scale-110 transition"
         />
 
-        <button className="border rounded-lg px-4 py-1 bg-orange-500 text-white hover:bg-orange-600 transition">
+        <button onClick={()=>setShowLogin(true)} className="border rounded-lg px-4 py-1 bg-orange-500 text-white hover:bg-orange-600 transition">
           Sign In
         </button>
       </div>
